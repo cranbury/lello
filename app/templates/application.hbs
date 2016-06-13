@@ -1,7 +1,7 @@
 <h2>Lello</h2>
 
   {{#each lists as |list|}}
-    {{item-list list=list}}
+    {{item-list list=list addItem=addItem}}
   {{/each}}
 
 <button {{action "addList"}}>Add list</button>

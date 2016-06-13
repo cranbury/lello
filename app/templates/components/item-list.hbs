@@ -5,8 +5,14 @@
   {{/each}}
 </ul>
 
-<label>Item Name</label>
-{{input value=itemName}}
-<label>Item Description</label>
-{{input value=itemDescription}}
-<button {{action "addItem"}}>Add Item</button>
+{{#if isExpanded}}
+  <div class="fill">
+    {{!-- <label>Item Name</label> --}}
+    {{input value=itemName}}
+{{!--     <label>Item Description</label>
+    {{input value=itemDescription}}
+    <button {{action "addItem"}}>Save Item</button> --}}
+  </div>
+{{else}}
+  <a href="#" {{action "expand"}}>Add item</a>
+{{/if}}
