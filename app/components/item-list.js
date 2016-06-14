@@ -1,14 +1,17 @@
 import Ember from 'ember';
 
-// var firstItem = Ember.Object.create({name: "first item", description: "---"});
+var firstItem = Ember.Object.create({name: "first item", description: "---"});
 
 export default Ember.Component.extend({
   isExpanded: false, //default state
+  showModal: false,
+  editItem: firstItem,
 
   actions: {
-    openModal: function(modalName) {
-      console.log(modalName);
-      this.sendAction('openModal',modalName);
+    openModal: function(item) {
+      this.set('editItem', item);
+      this.set('showModal', true);
+      console.log(this);
     },
 
     expand: function() {

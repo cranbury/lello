@@ -1,7 +1,7 @@
 <h4>{{list.title}}</h4>
 <ul>
   {{#each list.items as |item|}}
-    <li>{{item.name}}</li>
+    <li {{action "openModal" item}}>{{item.name}}</li>
   {{/each}}
 </ul>
 
@@ -14,8 +14,6 @@
   <a href="#" {{action "expand"}}>Add item</a>
 {{/if}}
 
-<button {{action 'openModal' 'modal-edit'}}>Open modal</button>
-
-
-{{outlet}}
-{{outlet 'modal'}}
+{{#if showModal}}
+  {{item-modal item=editItem}}
+{{/if}}
