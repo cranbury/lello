@@ -1,14 +1,21 @@
-<h4>{{list.title}}</h4>
+{{#if nameExpanded}}
+  <div class="fill">
+    {{input value=list.title}}
+    <button style='display: none;' class='unseen-save' {{action "saveName"}}>Save Name</button>
+  </div>
+{{else}}
+  <h4 {{action "changeName"}}>{{list.title}}</h4>
+{{/if}}
 <ul>
   {{#each list.items as |item|}}
     <li {{action "openModal" item}}>{{item.name}}</li>
   {{/each}}
 </ul>
 
-{{#if isExpanded}}
+{{#if itemExpanded}}
   <div class="fill">
     {{input value=itemName}}
-    <button style='display: none;' class='item-save' {{action "addItem"}}>Save Item</button>
+    <button style='display: none;' class='unseen-save' {{action "addItem"}}>Save Item</button>
   </div>
 {{else}}
   <a href="#" {{action "expand"}}>Add item</a>

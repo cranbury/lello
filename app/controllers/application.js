@@ -26,7 +26,7 @@ document.addEventListener('mouseup', function clickAwayListener(e){
 
   if (!container.is(e.target) && container.has(e.target).length === 0) // not targer or descendant
   {
-    Ember.$('.item-save').click();
+    Ember.$('.unseen-save').click();
   }
 });
 
