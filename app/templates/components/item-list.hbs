@@ -15,5 +15,5 @@
 {{/if}}
 
 {{#if showModal}}
-  {{item-modal item=editItem closeModal=(action 'closeModal')}}
+  {{item-modal item=editItem closeModal=(action 'closeModal') delItem=(action 'delItem')}}
 {{/if}}

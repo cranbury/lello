@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   isExpanded: false, //default state
   showModal: false,
   editItem: firstItem,
+  list: null,
 
   actions: {
     openModal: function(item) {
@@ -15,6 +16,12 @@ export default Ember.Component.extend({
 
     closeModal: function(){
       this.set('showModal', false);
+    },
+
+    delItem: function(){
+      this.get("editItem").destroy();
+      this.set('showModal', false);
+      this.get("list").items.removeObject(this.get("editItem"));
     },
 
     expand: function() {
