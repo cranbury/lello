@@ -6,6 +6,10 @@ export default Ember.Component.extend({
   isExpanded: false, //default state
 
   actions: {
+    openModal: function(modalName) {
+      console.log(modalName);
+      this.sendAction('openModal',modalName);
+    },
 
     expand: function() {
       this.set('isExpanded', true);

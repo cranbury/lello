@@ -13,3 +13,9 @@
 {{else}}
   <a href="#" {{action "expand"}}>Add item</a>
 {{/if}}
+
+<button {{action 'openModal' 'modal-edit'}}>Open modal</button>
+
+
+{{outlet}}
+{{outlet 'modal'}}
