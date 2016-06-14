@@ -11,7 +11,10 @@ export default Ember.Component.extend({
     openModal: function(item) {
       this.set('editItem', item);
       this.set('showModal', true);
-      console.log(this);
+    },
+
+    closeModal: function(){
+      this.set('showModal', false);
     },
 
     expand: function() {

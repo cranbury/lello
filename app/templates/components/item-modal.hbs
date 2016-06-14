@@ -1,6 +1,8 @@
 {{#modal-dialog}}
   <label>Item name:</label>
-  {{input value=itemName}}
+  {{input value=item.name}}
   <label>Description:</label>
-  {{input value=itemDescription}}
+  {{input value=item.description}}
+  <button {{action "closeModal"}}>close</button>
+  <button>del</button>
 {{/modal-dialog}}
