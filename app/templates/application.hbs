@@ -1,7 +1,10 @@
 <h2>Lello</h2>
-
-  {{#each lists as |list|}}
-    {{item-list list=list addItem=addItem}}
-  {{/each}}
-
 <button {{action "addList"}}>Add list</button>
+  
+<div class="container">
+  <div class="row">
+    {{#each lists as |list|}}
+      {{item-list list=list class="col-sm-4 lel-list" addItem=addItem}}
+    {{/each}}
+  </div>
+</div>
